@@ -1,6 +1,4 @@
-/* =========================
-   DESIGN SYSTEM (PROFESSIONAL)
-========================= */
+
 :root {
   --page-bg-start: #f9fafb;
   --page-bg-end: #eef2f7;
@@ -16,18 +14,14 @@
   --border: #e5e7eb;
 }
 
-/* =========================
-   RESET
-========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BASE TYPOGRAPHY + BACKGROUND
-========================= */
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: linear-gradient(
@@ -59,9 +53,7 @@ main {
   }
 }
 
-/* =========================
-   CARD (REUSABLE)
-========================= */
+
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -76,9 +68,7 @@ main {
   box-shadow: 0 14px 28px rgba(31, 41, 55, 0.15);
 }
 
-/* =========================
-   HEADER (GRADIENT ADDED)
-========================= */
+
 .header {
   display: flex;
   align-items: center;
@@ -93,9 +83,7 @@ main {
   );
 }
 
-/* =========================
-   AVATAR
-========================= */
+
 .avatar {
   width: 104px;
   height: 104px;
@@ -105,9 +93,7 @@ main {
   background: #ffffff;
 }
 
-/* =========================
-   HEADER INFO
-========================= */
+
 .header-info {
   flex: 1;
   text-align: center;
@@ -133,9 +119,7 @@ main {
   margin-top: 4px;
 }
 
-/* =========================
-   CONTACT LINKS (HOVER KEPT)
-========================= */
+
 .contact {
   display: flex;
   gap: 10px;
@@ -157,9 +141,7 @@ main {
   transform: translateY(-2px);
 }
 
-/* =========================
-   SECTION HEADINGS
-========================= */
+
 h3 {
   font-family: 'Playfair Display', serif;
   font-size: 19px;
@@ -177,9 +159,6 @@ h3::after {
   margin-top: 6px;
 }
 
-/* =========================
-   EDUCATION
-========================= */
 .item {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
@@ -205,9 +184,7 @@ h3::after {
   color: #6b7280;
 }
 
-/* =========================
-   SKILLS
-========================= */
+
 .skill-group {
   margin-bottom: 24px;
 }
@@ -239,9 +216,7 @@ h3::after {
   box-shadow: 0 6px 12px rgba(31, 41, 55, 0.2);
 }
 
-/* =========================
-   PROJECTS
-========================= */
+
 .project {
   margin-bottom: 26px;
   padding-left: 16px;
@@ -259,9 +234,6 @@ h3::after {
   margin-top: 4px;
 }
 
-/* =========================
-   ACHIEVEMENTS
-========================= */
 .achievement-list {
   list-style: none;
 }
@@ -289,9 +261,6 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
   body {
     padding: 20px 14px;
@@ -311,3 +280,4 @@ a:focus-visible {
     margin-bottom: 10px;
   }
 }
+
