@@ -1,37 +1,38 @@
-
 :root {
   --page-bg-start: #f9fafb;
-  --page-bg-end: #eef2f7;
+  --page-bg-end: #e5e7eb;
 
   --card-bg: #ffffff;
 
   --text-main: #1f2937;
   --text-muted: #6b7280;
 
-  --accent: #374151;          /* neutral slate */
+  --accent: #374151;
   --accent-soft: #e5e7eb;
-
   --border: #e5e7eb;
 }
 
-
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
+/* =========================
+   BASE TYPOGRAPHY + BACKGROUND
+========================= */
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(
-    180deg,
-    var(--page-bg-start),
-    var(--page-bg-end)
+    135deg,
+    var(--page-bg-start) 0%,
+    var(--page-bg-end) 100%
   );
   color: var(--text-main);
-  line-height: 1.7;
-  font-size: 15px;
+  line-height: 1.6;
   padding: 40px 20px;
 }
 
@@ -53,7 +54,9 @@ main {
   }
 }
 
-
+/* =========================
+   CARD (REUSABLE)
+========================= */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -68,13 +71,14 @@ main {
   box-shadow: 0 14px 28px rgba(31, 41, 55, 0.15);
 }
 
-
+/* =========================
+   HEADER
+========================= */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
   background: linear-gradient(
     135deg,
     #f1f5f9 0%,
@@ -82,7 +86,6 @@ main {
     #f8fafc 100%
   );
 }
-
 
 .avatar {
   width: 104px;
@@ -93,7 +96,9 @@ main {
   background: #ffffff;
 }
 
-
+/* =========================
+   HEADER INFO
+========================= */
 .header-info {
   flex: 1;
   text-align: center;
@@ -119,7 +124,9 @@ main {
   margin-top: 4px;
 }
 
-
+/* =========================
+   CONTACT
+========================= */
 .contact {
   display: flex;
   gap: 10px;
@@ -141,7 +148,9 @@ main {
   transform: translateY(-2px);
 }
 
-
+/* =========================
+   SECTION HEADINGS
+========================= */
 h3 {
   font-family: 'Playfair Display', serif;
   font-size: 19px;
@@ -159,6 +168,9 @@ h3::after {
   margin-top: 6px;
 }
 
+/* =========================
+   EDUCATION
+========================= */
 .item {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
@@ -168,15 +180,9 @@ h3::after {
   border-bottom: none;
 }
 
-.item strong {
-  font-size: 15.5px;
-  font-weight: 600;
-}
-
 .institute {
   font-size: 14px;
   color: var(--text-muted);
-  margin-top: 3px;
 }
 
 .meta {
@@ -184,7 +190,9 @@ h3::after {
   color: #6b7280;
 }
 
-
+/* =========================
+   SKILLS
+========================= */
 .skill-group {
   margin-bottom: 24px;
 }
@@ -193,7 +201,6 @@ h3::after {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--accent);
 }
 
 .badges {
@@ -208,15 +215,11 @@ h3::after {
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(31, 41, 55, 0.2);
-}
-
-
+/* =========================
+   PROJECTS
+========================= */
 .project {
   margin-bottom: 26px;
   padding-left: 16px;
@@ -225,15 +228,15 @@ h3::after {
 
 .project h4 {
   font-size: 15.5px;
-  font-weight: 600;
 }
 
 .project p {
   font-size: 14px;
-  color: #374151;
-  margin-top: 4px;
 }
 
+/* =========================
+   ACHIEVEMENTS
+========================= */
 .achievement-list {
   list-style: none;
 }
@@ -246,24 +249,65 @@ h3::after {
 }
 
 .achievement-list li::before {
-  content: "★";
+  content: "*";
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-weight: bold;
 }
 
 /* =========================
-   ACCESSIBILITY
+   RECOMMENDATIONS (NEW)
 ========================= */
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Laptop */
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 20px 14px;
+.recommendation-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.recommendation-card .role {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.recommendation-card .message {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+.recommendation-card a {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.recommendation-card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet → 2 cards */
+@media (max-width: 900px) {
+  .recommendation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile → 1 card */
+@media (max-width: 600px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr;
   }
 
   .header {
@@ -274,10 +318,6 @@ a:focus-visible {
   .contact {
     justify-content: center;
     flex-wrap: wrap;
-  }
-
-  .avatar {
-    margin-bottom: 10px;
   }
 }
 
